@@ -1,4 +1,3 @@
-//on a creer ce fichier pour enregistrer le theme en utilisant zustand .
 
 "use client";
 
