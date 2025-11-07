@@ -1,4 +1,3 @@
-// app/search/components/SearchForm.tsx
 "use client";
 
 import { useState } from "react";

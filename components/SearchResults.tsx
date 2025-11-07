@@ -27,7 +27,7 @@ export default async function SearchResults({ query, category, tag }: Props) {
 
   filters.set("populate[author][fields][0]", "name");
 
-  const url = `http://localhost:1337/api/posts?${filters.toString()}`;
+  const url = `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/posts?${filters.toString()}`;
 
   try {
     const res = await fetch(url);
@@ -78,7 +78,7 @@ export default async function SearchResults({ query, category, tag }: Props) {
           <ul className="space-y-4">
             {json.data.map((postObj: Post) => {
               const attrs = postObj ?? {};
-              console.log("Post attributes:", attrs);
+              // console.log("Post attributes:", attrs);
               const title = attrs.title ?? "Sans titre";
               const slug = attrs.slug ?? "";
               const categoryName = (attrs.categories ?? [])
