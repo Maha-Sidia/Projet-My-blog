@@ -63,7 +63,7 @@ export default async function PostPage({ params }: PostPageProps) {
   const post: Post | null = await fetchPostBySlug(slug);
 
   if (!post) {
-    return notFound(); // renvoie 404 si post introuvable
+    return notFound(); 
   }
 
   return (

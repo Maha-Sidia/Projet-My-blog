@@ -57,7 +57,6 @@ export default async function SearchResults({ query, category, tag }: Props) {
 
     const json = await res.json();
 
-    // Vérification défensive : s'assurer de la structure Strapi { data: [...] }
     if (!json || !Array.isArray(json.data)) {
       const body = JSON.stringify(json);
       console.error("[SearchResults] Unexpected response structure:", body);
@@ -78,12 +77,10 @@ export default async function SearchResults({ query, category, tag }: Props) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <ul className="space-y-4">
             {json.data.map((postObj: Post) => {
-              // Strapi: postObj = { id, attributes: { title, content, categories, tags, cover, ... } }
               const attrs = postObj ?? {};
               console.log("Post attributes:", attrs);
               const title = attrs.title ?? "Sans titre";
               const slug = attrs.slug ?? "";
-              // categories est un manyToMany -> categories.data est un tableau
               const categoryName = (attrs.categories ?? [])
                 .map((c: any) => c?.slug)
                 .filter(Boolean);

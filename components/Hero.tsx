@@ -7,12 +7,10 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen bg-[var(--bg)] text-[var(--text)] overflow-hidden flex items-center">
       <div className="max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        {/* LEFT: Texte */}
         <div>
           <h1 className="text-5xl md:text-6xl font-bold leading-tight">
             Explore the World <br />
             <span className="relative inline-block">
-              {/* halo coloré */}
               <span className="absolute inset-0 bg-gradient-to-r from-[var(--accent)] via-transparent to-transparent blur-2xl opacity-40"></span>
               <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent)] to-pink-500">
                 Through Words
@@ -25,7 +23,6 @@ export default function Hero() {
             perspectives on technology, lifestyle and innovation.
           </p>
 
-          {/* CTA Buttons */}
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <a
               href="#"
@@ -41,13 +38,11 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Stats */}
           <div className="mt-16">
             <Stats />
           </div>
         </div>
 
-        {/* RIGHT: Image */}
         <div className="flex justify-center lg:justify-end relative group">
           <div className="absolute -inset-1 bg-gradient-to-r from-[var(--accent)] to-pink-500 rounded-3xl blur-2xl opacity-25 group-hover:opacity-50 transition"></div>
 

@@ -1,14 +1,13 @@
 "use client";
 
 import { useThemeStore } from "../store/theme.store";
-import { Sun, Moon } from "lucide-react"; // Optional icons
+import { Sun, Moon } from "lucide-react"; 
 import { useEffect, useState } from "react";
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useThemeStore();
   const [mounted, setMounted] = useState(false);
 
-  // Empêche les problèmes de SSR (hydration)
   useEffect(() => {
     setMounted(true);
   }, []);

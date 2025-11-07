@@ -1,11 +1,10 @@
-// app/search/page.tsx
 import SearchForm from "../../components/SearchForm";
 import SearchResults from "../../components/SearchResults";
 
 type Props = { searchParams?: { q?: string; category?: string; tag?: string } };
 
 export default async function SearchPage({ searchParams }: Props) {
-  const params = await searchParams; // ✅ unwrap
+  const params = await searchParams; 
   const query = params?.q || "";
   const category = params?.category || "";
   const tag = params?.tag || "";
